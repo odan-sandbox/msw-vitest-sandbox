@@ -1,10 +1,12 @@
-import { setupServer } from "msw/node";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import { setupServer } from "../node_modules/msw/node/lib/index.js";
 import { rest } from "msw";
 
 export function getHandlers(rpcUrl: string) {
   const handlers = [
     rest.post<{ id: string }>(rpcUrl, (_, res, ctx) => {
-      return res(ctx.json({}));
+      return res(ctx.json({ mocked: true }));
     }),
   ];
 

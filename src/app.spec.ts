@@ -1,5 +1,4 @@
 import fetch from "node-fetch";
-
 import { getServer } from "./server.mock";
 
 describe("app", (): void => {

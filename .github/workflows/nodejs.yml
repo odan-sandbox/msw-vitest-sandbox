@@ -33,11 +33,13 @@ jobs:
       - name: yarn install
         run: |
           yarn install --frozen-lockfile --verbose
-        env:
-          CI: true
 
-      - name: Run test
+      - name: Run vitest
+        if: ${{ always() }}
         run: |
-          yarn test
-        env:
-          CI: true
+          for i in {1..10}; do yarn vitest run --globals; done
+
+      - name: Run ts-node
+        if: ${{ always() }}
+        run: |
+          for i in {1..10}; do yarn ts-node --esm src/run.ts; done

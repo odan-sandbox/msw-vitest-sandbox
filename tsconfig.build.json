@@ -4,7 +4,8 @@
     "outDir": "dist",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowJs": true
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["./src/**/*.spec.ts"]
