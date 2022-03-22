@@ -42,4 +42,9 @@ jobs:
       - name: Run ts-node
         if: ${{ always() }}
         run: |
+          DEBUG=* yarn ts-node --esm src/run.ts
+
+      - name: Run ts-node
+        if: ${{ always() }}
+        run: |
           for i in {1..10}; do yarn ts-node --esm src/run.ts; done
