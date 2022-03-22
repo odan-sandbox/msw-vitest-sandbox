@@ -1,4 +1,3 @@
-import { describe, it, expect, beforeAll, afterEach, afterAll } from "vitest";
 import fetch from "node-fetch";
 
 import { getServer } from "./server.mock";
@@ -15,9 +14,8 @@ describe("app", (): void => {
     it.only("fetch", async () => {
       const response = await fetch(rpcUrl, {
         method: "POST",
-        body: "{}",
-        // body: null,
-        // body: '{"id":42,"method":"eth_getTransactionCount","params":["from","pending"]}',
+        body: JSON.stringify({ poyo: 1 }),
+        headers: { "Content-Type": "application/json" },
       });
       console.log("response", await response.json());
 

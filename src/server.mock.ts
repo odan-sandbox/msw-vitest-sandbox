@@ -4,11 +4,7 @@ import { rest } from "msw";
 export function getHandlers(rpcUrl: string) {
   const handlers = [
     rest.post<{ id: string }>(rpcUrl, (_, res, ctx) => {
-      return res(
-        ctx.json({
-          result: "a",
-        })
-      );
+      return res(ctx.json({}));
     }),
   ];
 
