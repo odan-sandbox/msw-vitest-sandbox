@@ -10,7 +10,7 @@ describe("app", (): void => {
   afterAll(() => server.close());
 
   describe("add", (): void => {
-    it.only("fetch", async () => {
+    it("fetch", async () => {
       const response = await fetch(rpcUrl, {
         method: "POST",
         body: JSON.stringify({ poyo: 1 }),
